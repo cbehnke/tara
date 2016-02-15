@@ -17,8 +17,7 @@ $alert: $color-3;  // red
 
 // fonts
 
-$primary-font: 'Merriweather', serif;
-$secondary-font: 'Open Sans', sans-serif;
+$primary-font: Helvetica, Arial, sans-serif;
 
 /* -------------------------------- 
 
@@ -73,6 +72,7 @@ header {
 	li a {
 		color: $color-5;
 		border-color: lighten($color-2, 5%);
+		text-transform: uppercase;
 	}
 
 	@include MQ(M) {
@@ -154,7 +154,6 @@ xTypography
 -------------------------------- */
 
 h1, h2 {
-	font-family: $secondary-font;
 	color: $color-2;
 }
 
@@ -217,7 +216,6 @@ xButtons
 	border-radius: .25em;
 	font: {
 		size: 1.4rem;
-		family: $secondary-font;
 	}
 	color: $color-5;
 	padding: .6em 2.2em;
