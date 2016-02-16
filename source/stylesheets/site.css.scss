@@ -37,10 +37,7 @@ Layout
 
 .cd-box {
 	/* this is the container of various design elements - i.e. the 2 logo of the branding section */
-	// border: 1px solid $color-4;
-	// border-radius: 3px;
 	background: $color-5;
-	// box-shadow: 0 1px 1px rgba(#000, .05);
 	padding: 6px;
 }
 
@@ -208,17 +205,51 @@ p {
 
 
 footer {
+	font-size: 1em;
+	line-height: 1.6;
 	background: $color-4;
-	color: $color-3;
+	color: rgba( $color-6, 50% );
 	padding: 5em;
 
-	a { color: $color-6; }
+	h3 {
+		font-size: 1em;
+		text-transform: uppercase;
+		margin-top: 1.6em;
+	}
+
+	p {
+		color: rgba( $color-6, .5 );
+		font-size: 0.8em;
+		line-height: 1.6;
+		padding: 1em 0;
+		margin: 0;
+	}
+
+	a { color: $color-1; text-decoration: underline; }
 
 	@include MQ(S) {
 		footer {
 			padding: 2em;
 		}
 	} 
+
+
+	section {
+		width: 90%;
+		max-width: $M;
+		margin: 0 auto;
+		padding: 50px 0;
+
+		@include MQ(M) {
+			padding-top: 80px;
+		}
+
+		@include MQ(L) {
+			max-width: none;
+			padding: 120px 0 50px;
+		}
+}
+
 }
 
 
@@ -228,3 +259,4 @@ footer {
 @import 'partials/sections/mark';
 @import 'partials/sections/colors';
 @import 'partials/sections/typography';
+@import 'partials/sections/applications';

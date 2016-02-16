@@ -22,10 +22,6 @@ jQuery(document).ready(function($){
 	    }
 	}
 	//set a label for each color swatch
-	$('.cd-color-swatch').each(function(){
-		var actual = $(this);
-		$('<b>'+actual.css("background-color")+'</b>').insertAfter(actual);
-	});
 
 
 	/*******************

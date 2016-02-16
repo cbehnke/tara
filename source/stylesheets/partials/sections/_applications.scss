@@ -1,0 +1,21 @@
+/* xApplications section - basic style */
+
+.cd-applications {
+  img { 
+    display: inline-block;
+    width: 50%; 
+    float: left;
+  }
+
+  p {
+    width: 40%;
+    display: inline-block;
+    margin-left: 2em;
+  }
+
+  p.intro {
+    width: 100%;
+    margin-left: 0;
+  }
+  .image-container { @include clearfix; margin-bottom: 4em; }
+}
