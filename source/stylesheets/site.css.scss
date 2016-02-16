@@ -1,14 +1,18 @@
-@import 'bourbon'; // http://bourbon.io/
+// Imports
 
+@import 'bourbon'; // http://bourbon.io/
 @import 'partials/layout'; // responsive grid and media queries
 
 // color palette - these colors will be the color swatches of the Colors section
 
-$color-1: #5f8ee4; // Cornflower Blue - Action color
-$color-2: #19191a; // Dark Blue
-$color-3: #e4655f; // Red
-$color-4: #e6e6e6; // light grey
-$color-5: #ffffff; // white
+$color-2: #53d5a1; // Mint Green - Base Color
+$color-1: #b3efb2; // Mint Green Tint
+$color-2: #2e9961; // Mint Green Shade
+$color-3: #6290c3; // Secondary Blue Tint
+$color-4: #003554; // Secondary Blue Shade
+$color-5: #e8f1f2; // light grey
+$color-6: #ffffff; // white
+$color-7: #000000; // black
 
 // additional colors
 
@@ -19,45 +23,43 @@ $alert: $color-3;  // red
 
 $primary-font: Helvetica, Arial, sans-serif;
 
-/* -------------------------------- 
 
-xBackground 
+body { background-color: $color-6; }
 
--------------------------------- */
 
-body {
-	/* this is the page background */
-	background-color: $color-5;
-}
+
 
 /* -------------------------------- 
 
-xPatterns
+Layout
 
 -------------------------------- */
 
 .cd-box {
 	/* this is the container of various design elements - i.e. the 2 logo of the branding section */
-	border: 1px solid $color-4;
-	border-radius: 3px;
+	// border: 1px solid $color-4;
+	// border-radius: 3px;
 	background: $color-5;
-	box-shadow: 0 1px 1px rgba(#000, .05);
+	// box-shadow: 0 1px 1px rgba(#000, .05);
 	padding: 6px;
 }
 
+
+
+
 /* -------------------------------- 
 
-xNavigation 
+Navigation 
 
 -------------------------------- */
 
 header {
-	background-color: $color-2;
+	background-color: $color-7;
 }
 
 .cd-logo {
 	/* logo box style */
-	background-color: $color-1;
+	background-color: $color-7;
 	width: 120px;
 
 	@include MQ(M) {
@@ -67,10 +69,10 @@ header {
 
 .cd-main-nav {
 	/* main navigation background color - full screen on small devices */
-	background: $color-2;
+	background: $color-7;
 
 	li a {
-		color: $color-5;
+		color: $color-6;
 		border-color: lighten($color-2, 5%);
 		text-transform: uppercase;
 	}
@@ -132,6 +134,9 @@ header {
 	}
 }
 
+
+
+
 /* -------------------------------- 
 
 xPage title 
@@ -147,15 +152,14 @@ main > h1 {
 	}
 }
 
+
+
+
 /* -------------------------------- 
 
 xTypography 
 
 -------------------------------- */
-
-h1, h2 {
-	color: $color-2;
-}
 
 h1 {
 	font-size: 2.4rem;
@@ -173,25 +177,21 @@ h1 {
 }
 
 h2 {
-	font-weight: bold;
-	text-transform: uppercase;
+	font-weight: 100;
 	margin: 1em 0;
 
 	@include MQ(S) {
-		font-size: 1.8rem;
+		font-size: 3.2rem;
 		margin: 1em 0 1.4em;
 	}
 }
 
-section > h2::before {
-	/* number before each section title */
-	color: darken($color-4, 15%);
-}
-
 p {
+	width: 80%;
 	font-size: 1.4rem;
-	line-height: 1.4;
-	color: lighten($color-2, 25%);
+	line-height: 2;
+	color: lighten( $color-7, 40% );
+	padding: 1em 0 1.6em;
 
 	a {
 		color: $color-1;
@@ -199,202 +199,32 @@ p {
 	}
 
 	@include MQ(S) {
-		font-size: 1.6rem;
-		line-height: 1.6;
+		width: 100%;
+		font-size: 1.8rem;
+		line-height: 2.4; 
 	}
 }
 
-/* -------------------------------- 
 
-xButtons 
 
--------------------------------- */
+footer {
+	background: $color-4;
+	color: $color-3;
+	padding: 5em;
 
-.btn {
-	border: none;
-	box-shadow: none;
-	border-radius: .25em;
-	font: {
-		size: 1.4rem;
-	}
-	color: $color-5;
-	padding: .6em 2.2em;
-	cursor: pointer;
-	background: $color-1;
-
-	&:focus {
-		outline: none;
-	}
-
-	.no-touch &:hover {
-		background: lighten($color-1, 5%);
-	}
-
-	&.btn-success {
-		background: $success;
-
-		.no-touch &:hover {
-			background: lighten($success, 5%);
-		}
-	}
-
-	&.btn-alert {
-		background: $alert;
-
-		.no-touch &:hover {
-			background: lighten($alert, 5%);
-		}
-	}
-
-	&.btn-outline {
-		color: $color-1;
-		background: transparent;
-		box-shadow: inset 0 0 0 1px $color-1;
-
-		.no-touch &:hover {
-			color: $color-5;
-			background: $color-1;
-		}
-	}
+	a { color: $color-6; }
 
 	@include MQ(S) {
-		font-size: 1.6rem;
-	}
+		footer {
+			padding: 2em;
+		}
+	} 
 }
 
-.cd-buttons .cd-box:nth-of-type(2) span {
-	/* CSS class name color */ 
-	color: $color-1;
-}
 
-/* -------------------------------- 
-
-xIcons 
-
--------------------------------- */
-
-.cd-icons li {
-	/* icons size */
-	width: 32px;
-	height: 32px;
-}
-
-/* -------------------------------- 
-
-xForm 
-
--------------------------------- */
-
-input[type=text], select {
-	border: 1px solid $color-4;
-	border-radius: .25em;
-	background: $color-5;
-
-	&:focus {
-		outline: none;
-	}
-}
-
-input[type=text] {
-	padding: .6em 1em;
-	box-shadow: inset 1px 1px rgba(#000, .03);
-
-	&.success {
-		border-color: $success;
-		box-shadow: 0 0 6px rgba($success, .2);
-	}
-
-	&.alert {
-		border-color: $alert;
-		box-shadow: 0 0 6px rgba($alert, .2);
-	}
-
-	&:focus {
-		border-color: $color-1;
-		box-shadow: 0 0 6px rgba($color-1, .2);
-	}
-}
-
-input[type=radio],
-input[type=checkbox] {
-	position: absolute;
-	left: 0;
-	top: 0;
-	margin: 0;
-	padding: 0;
-	opacity: 0;
-}
-
-.radio-label,
-.checkbox-label {
-	padding-left: 24px;
-	@include user-select(none);
-
-	&::before,
-	&::after {
-		/* custom radio and check boxes */
-		content: '';
-		display: block;
-		width: 16px;
-		height: 16px;
-		position: absolute;
-		top: 50%;
-		@include transform(translateY(-50%));
-	}
-
-	&::before {
-		left: 0;
-		border: 1px solid $color-4;
-		box-shadow: inset 1px 1px rgba(#000, .03);
-	}
-
-	&::after {
-		left: 3px;
-		background: url('../assets/form/icon-check.svg') no-repeat center center;
-		display: none;
-	}
-}
-
-.radio-label::before {
-	border-radius: 50%;
-}
-
-.checkbox-label::before {
-	border-radius: 3px;
-}
-
-input[type=radio]:checked + label::before,
-input[type=checkbox]:checked + label::before {
-	background-color: $color-2;
-	border: none;
-	box-shadow: none;
-}
-
-input[type=radio]:checked + label::after,
-input[type=checkbox]:checked + label::after {
-	display: block;
-}
-
-.cd-select::after {
-	/* switcher arrow for select element */
-	content: '';
-	position: absolute;
-	z-index: 1;
-	right: 14px;
-	top: 50%;
-	@include transform(translateY(-50%));
-	display: block;
-	width: 16px;
-	height: 16px;
-	background: url('../assets/form/icon-select.svg') no-repeat center center;
-	pointer-events: none;
-}
-
-select {
-	position: relative;
-	padding: .6em 2em .6em 1em;
-	cursor: pointer;
-	@include appearance(none);
-}
 
 @import 'partials/basic-style';
+
+@import 'partials/sections/mark';
+@import 'partials/sections/colors';
+@import 'partials/sections/typography';
